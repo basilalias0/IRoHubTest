@@ -23,7 +23,7 @@ const userController = {
             if(!hashedPassword){
                 throw new Error("Hashing password failed")
             }
-            const createdUser =  User.create({
+            const createdUser = await User.create({
                 name,
                 email,
                 password:hashedPassword
